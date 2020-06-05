@@ -1,37 +1,27 @@
 #include <iostream>
-#include <vector>
 using namespace std;
-typedef long long int lli;
 int main()
 {
-    lli testcases;
+    int testcases;
     cin >> testcases;
-    for (lli i = 0; i < testcases; i++)
+    for (int i = 0; i < testcases; i++)
     {
-        lli n, k, val, initial_sum = 0, updated_sum = 0;
+        int n, k, val, sum_total = 0, sum_updated = 0;
         cin >> n >> k;
-        vector<lli> v;
-        for (lli j = 0; j < n; j++)
+        for (int j = 0; j < n; j++)
         {
             cin >> val;
-            v.push_back(val);
-        }
-        for (auto x : v)
-        {
-            initial_sum += x;
-        }
-        for (auto it = v.begin(); it != v.end(); it++)
-        {
-            if (*it > k)
+            sum_total += val;
+            if (val > k)
             {
-                updated_sum += k;
+                sum_updated += k;
             }
             else
             {
-                updated_sum += *it;
+                sum_updated += val;
             }
         }
-        cout << initial_sum - updated_sum << endl;
+        cout << sum_total - sum_updated << endl;
     }
     return 0;
 }

@@ -35,15 +35,13 @@ int main()
             }
             else
             {
-                ctr5++;
-                ctr10++;
                 if (ctr10 > 0)
                 {
                     ctr10--;
                 }
                 else if (ctr5 > 1)
                 {
-                    ctr5 -= -2;
+                    ctr5 -= 2;
                 }
                 else
                 {

@@ -1,15 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <cmath>
 using namespace std;
 typedef long long int lli;
-
-bool isPerfectSquare(long double x)
-{
-    long double sr = sqrt(x);
-    return ((sr - floor(sr)) == 0);
-}
-
 int main()
 {
     lli testcases;
@@ -17,31 +9,30 @@ int main()
     for (lli i = 0; i < testcases; i++)
     {
         lli ts, js;
-        cin >> ts;
+        scanf("%lld", &ts);
         if (ts % 2 == 1)
         {
-            cout << ts / 2 << endl;
+            printf("%lld\n", ts / 2);
         }
         else
         {
             lli ctr = 0;
-            for (lli j = ts; j > 1; j -= 2)
+            for (lli j = ts - 2; j > 1; j -= 2)
             {
                 lli tt = ts, jj = j;
-                tt = tt / 2;
-                jj = jj / 2;
-                if (tt % 2 == 0 and jj % 2 == 0)
+                while (jj > 1)
                 {
-                    if(isPerfectSquare(tt)){
-                        ctr++;
+                    tt = tt / 2;
+                    jj = jj / 2;
+                    if (tt % 2 == 0 and jj % 2 == 0)
+                    {
                         continue;
                     }
-                    lli ttt = tt / 2, jjj = jj / 2;
-                    if (ttt % 2 == 1 and jjj % 2 == 1)
+                    else if (tt % 2 == 1 and jj % 2 == 1)
                     {
                         break;
                     }
-                    else if (ttt % 2 == 0 and jjj % 2 == 1)
+                    else if (tt % 2 == 0 and jj % 2 == 1)
                     {
                         break;
                     }
@@ -51,21 +42,8 @@ int main()
                         break;
                     }
                 }
-                else if (tt % 2 == 1 and jj % 2 == 1)
-                {
-                    break;
-                }
-                else if (tt % 2 == 0 and jj % 2 == 1)
-                {
-                    break;
-                }
-                else
-                {
-                    ctr++;
-                    break;
-                }
             }
-            cout << ctr << endl;
+            printf("%lld\n", ctr);
         }
     }
     return 0;

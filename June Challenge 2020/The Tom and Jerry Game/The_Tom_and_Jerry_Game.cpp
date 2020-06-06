@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-typedef long long int lli;
+typedef unsigned long long int lli;
 int main()
 {
     lli testcases;
@@ -9,15 +9,15 @@ int main()
     for (lli i = 0; i < testcases; i++)
     {
         lli ts, js;
-        scanf("%lld", &ts);
+        cin >> ts;
         if (ts % 2 == 1)
         {
-            printf("%lld\n", ts / 2);
+            cout << ts / 2 << endl;
         }
         else
         {
             lli ctr = 0;
-            for (lli j = ts - 2; j > 1; j -= 2)
+            for (lli j = ts-2; j > 1; j -= 2)
             {
                 lli tt = ts, jj = j;
                 while (jj > 1)
@@ -43,7 +43,7 @@ int main()
                     }
                 }
             }
-            printf("%lld\n", ctr);
+            cout << ctr << endl;
         }
     }
     return 0;

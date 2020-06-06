@@ -35,6 +35,7 @@ int main()
             }
             else
             {
+                ctr5++;
                 if (ctr10 > 0)
                 {
                     ctr10--;

@@ -8,7 +8,7 @@ int main()
     cin >> testcases;
     for (int i = 0; i < testcases; i++)
     {
-        int n, val, j = 0, ctr5 = 0, ctr10 = 0, ctr15 = 0;
+        int n, val, j = 0, ctr5 = 0, ctr10 = 0;
         cin >> n;
         vector<int> v;
         for (j = 0; j < n; j++)
@@ -35,7 +35,6 @@ int main()
             }
             else
             {
-                ctr15++;
                 if (ctr10 > 0)
                 {
                     ctr10--;
